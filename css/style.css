@@ -1,0 +1,47 @@
+.container{
+    max-width:1000px;
+    width:90%;
+    margin:auto;
+}
+nav{
+    display:flex;
+    justify-content:space-between;
+}
+nav img{
+    width:100px;
+    height:100px;
+}
+nav a{
+    text-decoration:none;
+    color:black;
+    transition:0.3s;
+    margin-top:30px;
+    padding:10px;
+}
+nav a:hover{
+    color:blue;
+    transform:scale(1.1);
+}
+img{
+    width:100px;
+    height:100px;
+}
+footer{
+    display:flex;
+    justify-content:center;
+    padding:60px 20px;
+    background-color:black;
+}
+.social {
+    display:flex;
+    gap:30px;
+}
+.social a{
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
+}
+.social a:hover{
+    color:blue;
+    transform:scale(1.2);
+}
