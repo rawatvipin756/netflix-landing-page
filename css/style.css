@@ -29,7 +29,7 @@ img{
 footer{
     display:flex;
     justify-content:center;
-    padding:60px 20px;
+    padding:100px 20px;
     background-color:black;
 }
 .social {
