@@ -18,10 +18,11 @@ nav img{
     height:100px;
 }
 nav a{
+    display:flex;
     text-decoration:none;
-    color:black;
+    color:white;
     transition:0.3s;
-    margin-top:30px;
+    align-items:center;
     padding:10px;
 }
 nav a:hover{
@@ -32,9 +33,27 @@ nav a:hover{
     text-align:center;
     padding:80px 20px;
     color:white;
+    background-image: url("../image/background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 500px;
+    width:100%;
+    position:relative;
+}
+.front::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.6);
+}
+
+.front>*{
+    position:relative;
+    z-index:1;
 }
 .front h1{
-    font-size:80px;
+    font-size:clamp(2.5rem,6vw,5rem);
 }
 .front p{
     font-size:20px;
@@ -57,6 +76,20 @@ nav a:hover{
     font-size:15px;
     border-radius:12px;
 }
+@media(max-width:768px){
+
+.entry{
+    flex-direction:column;
+    align-items:center;
+}
+
+.entry input,
+.entry button{
+    width:100%;
+    max-width:350px;
+}
+
+}
 .cards{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
@@ -69,6 +102,10 @@ nav a:hover{
 }
 .card{
     position:relative;
+    transition:0.3s;
+}
+.card:hover{
+    transform:translateY(-10px);
 }
 .position{
     position:absolute;
@@ -86,7 +123,7 @@ nav a:hover{
 .box{
     border:1px solid black;
     border-radius:15px;
-    width:200px;
+    width:auto;
     height:200px;
     gap:10px;
     padding:10px;
@@ -107,6 +144,10 @@ nav a:hover{
     background-color:grey;
     padding:10px;
     color:white;
+    transition:0.3s;
+}
+.que:hover{
+    background:#555;
 }
 .que button{
     border:none;
