@@ -150,7 +150,6 @@ option{
 }
 @media(max-width:335px){
     .main{
-        width:80%;
         min-width:335px;
     }
      body{
