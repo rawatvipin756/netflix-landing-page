@@ -143,6 +143,9 @@ option{
     }
 }
 @media(max-width:960px){
+    .main{
+        width:50%;
+    }
     .social{
         display:grid;
         grid-template-columns:repeat(2,1fr);
