@@ -132,12 +132,6 @@ option{
 }
 
 @media(max-width:1260px){
-    .sec{
-        width:100%;
-    }
-    .main{
-        width:35%;
-    }
     footer p{
         margin-left:0;
     }
@@ -155,6 +149,10 @@ option{
     }
 }
 @media(max-width:335px){
+    .main{
+        width:80%;
+        min-width:335px;
+    }
      body{
         min-width:335px;
      }
