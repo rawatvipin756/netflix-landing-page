@@ -171,10 +171,15 @@ footer{
     padding:100px 20px;
     background-color:black;
 }
-.social {
+/* .social {
     display:flex;
     gap:30px;
-}
+} */
+ .social{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        margin:0;
+    }
 .social a{
     text-decoration:none;
     color:white;
@@ -183,4 +188,12 @@ footer{
 .social a:hover{
     color:blue;
     transform:scale(1.2);
+}
+@media(max-width:335px){
+    .main{
+        min-width:335px;
+    }
+     body{
+        min-width:335px;
+     }
 }
