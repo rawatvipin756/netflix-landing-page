@@ -1,199 +1,406 @@
-body{
-    background-color:black;
+/* ---------- Base ---------- */
+
+* {
+    box-sizing: border-box;
 }
-h2{
-    color:white;
+
+body {
+    margin: 0;
+    background-color: black;
+    overflow-x: hidden;
 }
-.container{
-    max-width:1200px;
-    width:90%;
-    margin:auto;
+
+h2 {
+    color: white;
 }
-nav{
-    display:flex;
-    justify-content:space-between;
+
+.container {
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
 }
-nav img{
-    width:100px;
-    height:100px;
+
+
+/* ---------- Navbar ---------- */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
 }
-nav a{
-    display:flex;
-    text-decoration:none;
-    color:white;
-    transition:0.3s;
-    align-items:center;
-    padding:10px;
-    width:55px;
-    height:10px;
-    margin-top:30px;
-    border-radius:5px;
+
+nav img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+nav a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+    padding: 10px 15px;
+    min-width: 80px;
+    height: 40px;
+    border-radius: 5px;
     background-color: red;
 }
-nav a:hover{
-    opacity:0.8;
+
+nav a:hover {
+    opacity: 0.8;
 }
-.front{
-    text-align:center;
-    padding:80px 20px;
-    color:white;
+
+
+/* ---------- Hero ---------- */
+
+.front {
+    text-align: center;
+    padding: 80px 20px;
+    color: white;
     background-image: url("../image/background.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 500px;
-    width:100%;
-    position:relative;
-}
-.front::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,0.6);
+    min-height: 500px;
+    width: 100%;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.front>*{
-    position:relative;
-    z-index:1;
+.front::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
 }
-.front h1{
-    font-size:clamp(2.5rem,6vw,5rem);
-}
-.front p{
-    font-size:20px;
-}
-.entry{
-    display:flex;
-    justify-content:center;
-    padding:10px;
-    gap:10px;
-}
-.entry input{
-    width:250px;
-    height:50px;
-    font-size:15px;
-    border-radius:12px;
-    border:none;
-}
-.entry button{
-    width:250px;
-    height:54px;
-    font-size:15px;
-    border-radius:12px;
-    border:none;
-}
-@media(max-width:768px){
 
-.entry{
-    flex-direction:column;
-    align-items:center;
+.front > * {
+    position: relative;
+    z-index: 1;
+}
+
+.front h1 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    margin: 0;
+}
+
+.front p {
+    font-size: clamp(16px, 2vw, 20px);
+    max-width: 700px;
+}
+
+
+/* ---------- Input Section ---------- */
+
+.entry {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    gap: 10px;
+    width: 100%;
+    max-width: 600px;
 }
 
 .entry input,
-.entry button{
-    width:100%;
-    max-width:350px;
+.entry button {
+    height: 54px;
+    border-radius: 12px;
+    border: none;
+    font-size: 15px;
 }
 
+.entry input {
+    width: 50%;
+    padding: 0 15px;
 }
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:20px;
+
+.entry button {
+    width: 50%;
+    cursor: pointer;
 }
-.cards img{
-    width:200px;
-    height:250px;
-    border-radius:12px;
+
+
+/* ---------- Cards ---------- */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
 }
-.card{
-    position:relative;
-    transition:0.3s;
+
+.card {
+    position: relative;
+    transition: 0.3s;
+    overflow: hidden;
 }
-.card:hover{
-    transform:translateY(-10px);
+
+.card:hover {
+    transform: translateY(-10px);
 }
-.position{
-    position:absolute;
-    bottom:10px;
-    left:-15px;
-    font-size:80px;
-    font-weight:bold;
-    color:white;
+
+.cards img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
 }
-.boxs{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:20px;
+
+.position {
+    position: absolute;
+    bottom: 10px;
+    left: -15px;
+    font-size: clamp(50px, 7vw, 80px);
+    font-weight: bold;
+    color: white;
 }
-.box{
-    border:1px solid black;
-    border-radius:15px;
-    width:auto;
-    height:200px;
-    gap:10px;
-    padding:10px;
-    background-color:rgb(64, 64, 136);
+
+
+/* ---------- Information Boxes ---------- */
+
+.boxs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
 }
-.box h3{
-    color:white;
+
+.box {
+    border: 1px solid black;
+    border-radius: 15px;
+    min-height: 200px;
+    padding: 20px;
+    background-color: rgb(64, 64, 136);
 }
-.box p{
-    color:rgba(255, 255, 255, 0.749);
+
+.box h3 {
+    color: white;
 }
-.que{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    border:1px solid black;
-    margin:5px;
-    background-color:grey;
-    padding:10px;
-    color:white;
-    transition:0.3s;
+
+.box p {
+    color: rgba(255, 255, 255, 0.749);
+    line-height: 1.5;
 }
-.que:hover{
-    background:#555;
+
+
+/* ---------- FAQ ---------- */
+
+.que {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    margin: 5px 0;
+    background-color: grey;
+    padding: 15px;
+    color: white;
+    transition: 0.3s;
+    gap: 15px;
 }
-.que button{
-    border:none;
-    padding:10px;
-    width:100px;
-    font-size:xx-large;
-    height:50px;
-    margin-right:5px;
-    background-color:grey;
-    color:white;
+
+.que:hover {
+    background: #555;
 }
-footer{
-    display:flex;
-    justify-content:center;
-    padding:100px 20px;
-    background-color:black;
+
+.que button {
+    flex-shrink: 0;
+    border: none;
+    padding: 5px;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    background-color: grey;
+    color: white;
 }
+
+
+/* ---------- Footer ---------- */
+
+footer {
+    display: flex;
+    justify-content: center;
+    padding: 100px 20px;
+    background-color: black;
+}
+
 .social {
-    display:flex;
-    gap:30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
 }
- /* .social{
-        display:grid;
-        grid-template-columns:repeat(2,1fr);
-        margin:0;
-    } */
-.social a{
-    text-decoration:none;
-    color:white;
-    transition:0.3s;
+
+.social a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
 }
-.social a:hover{
-    color:blue;
-    transform:scale(1.2);
+
+.social a:hover {
+    color: blue;
+    transform: scale(1.2);
 }
-@media(max-width:335px){
-    .main{
-        min-width:335px;
+
+
+/* ---------- Tablet ---------- */
+
+@media (max-width: 768px) {
+
+    .container {
+        width: 92%;
     }
-     body{
-        min-width:335px;
-     }
+
+    nav img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .front {
+        min-height: 450px;
+        padding: 60px 20px;
+    }
+
+    .entry {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .entry input,
+    .entry button {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .boxs {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    footer {
+        padding: 70px 20px;
+    }
+}
+
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 576px) {
+
+    .container {
+        width: 94%;
+    }
+
+    nav {
+        padding: 10px 0;
+    }
+
+    nav img {
+        width: 65px;
+        height: 65px;
+    }
+
+    nav a {
+        min-width: 70px;
+        height: 36px;
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .front {
+        min-height: 420px;
+        padding: 50px 15px;
+    }
+
+    .front h1 {
+        font-size: 2.5rem;
+    }
+
+    .front p {
+        font-size: 16px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .cards img {
+        height: 220px;
+    }
+
+    .position {
+        font-size: 50px;
+        left: -8px;
+        bottom: 5px;
+    }
+
+    .boxs {
+        grid-template-columns: 1fr;
+    }
+
+    .box {
+        min-height: 180px;
+    }
+
+    .que {
+        padding: 12px;
+        font-size: 15px;
+    }
+
+    .que button {
+        width: 42px;
+        height: 42px;
+        font-size: 24px;
+    }
+
+    footer {
+        padding: 60px 20px;
+    }
+
+    .social {
+        gap: 20px;
+    }
+}
+
+
+/* ---------- Very Small Phones ---------- */
+
+@media (max-width: 400px) {
+
+    .container {
+        width: 95%;
+    }
+
+    .front h1 {
+        font-size: 2rem;
+    }
+
+    .front {
+        min-height: 380px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .cards img {
+        height: 300px;
+    }
+
+    .position {
+        font-size: 60px;
+    }
+
+    .social {
+        gap: 15px;
+    }
 }
