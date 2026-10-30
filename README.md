@@ -36,10 +36,6 @@ netflix-landing-page/
 │── pages/
 ```
 
-## 📸 Screenshot
-
-
-
 ## 🎯 Future Improvements
 
 - JavaScript FAQ Accordion
